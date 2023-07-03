@@ -1,0 +1,101 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: pecan-unconstrained-forecast
+spec:
+  parallelism: 1
+  completions: 1
+  backoffLimit: 2
+  template:
+    metadata:
+      name: pecan-unconstrained-forecast
+      creationTimestamp: null
+      labels:
+        job-name: pecan-unconstrained-forecast
+    spec:
+      containers:
+        - name: pecan-unconstrained-forecast
+          resources: {}
+          env:
+            - name: MINIO_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: pecan-bucket
+                  key: BUCKET_HOST
+            - name: MINIO_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: pecan-bucket
+                  key: BUCKET_PORT
+            - name: MINIO_ARROW_BUCKET
+              valueFrom:
+                configMapKeyRef:
+                  name: pecan-bucket
+                  key: BUCKET_NAME
+            - name: MINIO_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: pecan-bucket
+                  key: AWS_ACCESS_KEY_ID
+            - name: MINIO_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: pecan-bucket
+                  key: AWS_SECRET_ACCESS_KEY
+
+            - name: RABBITMQ_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: pecan-rabbitmq
+                  key: rabbitmq-password
+            - name: RABBITMQ_URI
+              value: 'amqp://guest:$(RABBITMQ_PASSWORD)@pecan-rabbitmq/%2F'
+            - name: PGHOST
+              value: pecan-postgresql.pecan.svc.cluster.local
+            - name: PGPORT
+              value: '5432'
+            - name: PGDATABASE
+              value: postgres
+            - name: PGUSER
+              value: postgres
+            - name: PGPASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: pecan-postgresql
+                  key: postgresql-password
+            - name: BETYUSER
+              value: bety
+            - name: BETYPASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: pecan-betydb
+                  key: betyPassword
+            - name: BETYDATABASE
+              value: bety
+            - name: NAME
+              value: pecan-server
+            - name: FQDN
+              value: pecan-server-pecan.apps-crc.testing
+            - name: SECRET_KEY_BASE
+              valueFrom:
+                secretKeyRef:
+                  name: pecan-betydb
+                  key: secretKey
+          volumeMounts:
+            - name: pecan-unconstrained-forecast-project
+              mountPath: /opt/forecast_example
+          terminationMessagePolicy: File
+
+          image: 'docker.io/pecan/base:1.7.2'
+          imagePullPolicy: Always
+      volumes:
+        - name: pecan-unconstrained-forecast-project
+          persistentVolumeClaim:
+            claimName: pecan-unconstrained-forecast-project
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+      dnsPolicy: ClusterFirst
+      securityContext: {}
+      schedulerName: default-scheduler
+  completionMode: NonIndexed
+  suspend: false
