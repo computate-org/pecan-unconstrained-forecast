@@ -82,9 +82,6 @@ for (s in seq_along(runDays)) {
         
       }
     } else { break }
-  } else {mc("ls minio")
-    ## previous run didn't occur
-    break
   }
   
 }

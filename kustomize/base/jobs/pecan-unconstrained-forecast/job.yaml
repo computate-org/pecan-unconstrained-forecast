@@ -1,5 +1,5 @@
-kind: Deployment
-apiVersion: apps/v1
+kind: Job
+apiVersion: batch/v1
 metadata:
   name: pecan-unconstrained-forecast
 spec:
@@ -86,13 +86,13 @@ spec:
               mountPath: /opt/forecast_example
           terminationMessagePolicy: File
 
-          image: 'docker.io/pecan/base:1.7.2'
+          image: 'quay.io/computateorg/pecan-unconstrained-forecast:latest'
           imagePullPolicy: Always
       volumes:
         - name: pecan-unconstrained-forecast-project
           persistentVolumeClaim:
             claimName: pecan-unconstrained-forecast-project
-      restartPolicy: Always
+      restartPolicy: Never
       terminationGracePeriodSeconds: 30
       dnsPolicy: ClusterFirst
       securityContext: {}
