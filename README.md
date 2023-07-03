@@ -14,10 +14,10 @@ In another terminal, rsync the forecast_example files to the debug job pod:
 oc rsync /home/ctate/.local/src/pecan-work/forecast_example/ pecan-unconstrained-forecast-debug:/opt/forecast_example/
 ```
 
-In the debug job pod, run the forecast: 
+In the debug job pod, run the forecast, line-by-line by copying them into the `R` command: 
 
 ```bash
-
+R
 ```
 
 ## Build the container with podman
