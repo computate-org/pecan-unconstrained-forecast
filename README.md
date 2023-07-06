@@ -37,3 +37,17 @@ podman run --rm -it computateorg/pecan-unconstrained-forecast:latest /bin/bash
 podman login quay.io
 podman push computateorg/pecan-unconstrained-forecast:latest quay.io/computateorg/pecan-unconstrained-forecast:latest
 ```
+
+## Deploy the pecan-unconstrained-forecast to NERC
+
+```bash
+oc apply -k kustomize/base/
+```
+
+## Redeploy the pecan-unconstrained-forecast Job to NERC
+
+```bash
+oc delete -k kustomize/base/jobs
+oc apply -k kustomize/base/jobs
+```
+

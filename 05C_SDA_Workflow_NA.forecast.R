@@ -32,7 +32,7 @@ minio_arrow_bucket <- Sys.getenv("MINIO_ARROW_BUCKET")
 ##  * set up separate cron jobs for input prep (met, constraints)
 
 ###################  TODAY'S SETTINGS  ########################
-runDays = Sys.Date()  ## for test case set this to 2022-05-22
+runDays = as.Date('2022-05-22')  ## for test case set this to 2022-05-22
 FORCE = FALSE  ## should we overwrite previously completed runs
 
 ## check for missed days

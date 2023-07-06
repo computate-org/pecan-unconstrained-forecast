@@ -1,4 +1,4 @@
-FROM docker.io/pecan/base:1.7.2
+FROM docker.io/pecan/base:develop
 
 MAINTAINER Christopher Tate <computate@computate.org>
 
@@ -7,6 +7,8 @@ ENV PECAN_HOME=/pecan \
 
 USER root
 
+RUN apt update
+RUN apt install -y vim python3-pip python3-virtualenv
 RUN mkdir /usr/local/src/pecan-unconstrained-forecast
 COPY . /usr/local/src/pecan-unconstrained-forecast
 
