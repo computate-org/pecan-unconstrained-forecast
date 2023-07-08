@@ -8,7 +8,14 @@ In one terminal, start a debug job pod:
 oc debug job/pecan-unconstrained-forecast
 ```
 
-In another terminal, rsync the forecast_example files to the debug job pod: 
+To more easily navigate the pod in the terminal, run these commands: 
+
+```bash
+bash
+PS1='$ '
+```
+
+This step has already been done, but if you need to run it again: In another terminal, rsync the forecast_example files to the debug job pod: 
 
 ```bash
 oc rsync /home/ctate/.local/src/pecan-work/forecast_example/ pecan-unconstrained-forecast-debug:/opt/forecast_example/
