@@ -5,6 +5,7 @@
 In one terminal, start a debug job pod: 
 
 ```bash
+oc project software-application-innovation-lab-sail-projects-fcd6dfa
 oc debug job/pecan-unconstrained-forecast
 ```
 
