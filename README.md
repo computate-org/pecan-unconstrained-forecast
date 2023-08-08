@@ -59,3 +59,14 @@ oc delete -k kustomize/base/jobs
 oc apply -k kustomize/base/jobs
 ```
 
+# RHODS deployment
+
+## RSync the forecast_example directory to the pod
+
+Ask the professor for a link to the forecast_example.tgz and extract it to your computer. 
+Then rsync the forecast_example to the pod: 
+
+```bash
+oc -n eco-forecast rsync forecast_example/ pecan-unconstrained-forecast-0:/opt/app-root/src/forecast_example/
+```
+
