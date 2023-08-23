@@ -7,6 +7,8 @@ In one terminal, start a debug job pod:
 ```bash
 oc project software-application-innovation-lab-sail-projects-fcd6dfa
 oc debug job/pecan-unconstrained-forecast
+git clone https://github.com/mdietze/pecan.git -b hf_landscape /opt/app-root/src/pecan
+export PECAN_HOME=/opt/app-root/src/pecan
 ```
 
 To more easily navigate the pod in the terminal, run these commands: 
