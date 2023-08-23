@@ -11,6 +11,12 @@ git clone https://github.com/mdietze/pecan.git -b hf_landscape /opt/app-root/src
 export PECAN_HOME=/opt/app-root/src/pecan
 ```
 
+In the debug job pod, run the forecast, line-by-line by copying them into the `R` command: 
+
+```bash
+R
+```
+
 To more easily navigate the pod in the terminal, run these commands: 
 
 ```bash
@@ -22,12 +28,6 @@ This step has already been done, but if you need to run it again: In another ter
 
 ```bash
 oc rsync /home/ctate/.local/src/pecan-work/forecast_example/ pecan-unconstrained-forecast-debug:/opt/forecast_example/
-```
-
-In the debug job pod, run the forecast, line-by-line by copying them into the `R` command: 
-
-```bash
-R
 ```
 
 ## Build the container with podman
