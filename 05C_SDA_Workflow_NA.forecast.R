@@ -1,5 +1,9 @@
 ## Forecast helper script around 05_SDA_Workflow_NA
 
+## Add required libraries
+library("magrittr")
+library("dplyr")
+
 ## forecast configuration
 ## projectdir = "/projectnb/dietzelab/dietze/hf_landscape_SDA/forecast_example/" ## main folder
 projectdir = Sys.getenv("PROJECT_DIR")
@@ -95,7 +99,7 @@ source(file.path(pecanhome,"modules/assim.sequential/inst/hf_landscape/PEcAn2EFI
 # helper function for minio URIs
 minio_path <- function(...) paste(minio_arrow_bucket, ..., sep = "/")
 minio_uri <- function(...) {
-  template <- "s3://%s:%s@%s?scheme=http&endpoint_override=%s%s%s"
+  template <- "s3://%s:%s@%s?scheme=https&endpoint_override=%s%s%s"
   sprintf(template, minio_key, minio_secret, minio_path(...), minio_host, ":", minio_port)
 }
 minio_uri_public <- function(...) {

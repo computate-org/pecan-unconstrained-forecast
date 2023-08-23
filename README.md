@@ -70,3 +70,5 @@ Then rsync the forecast_example to the pod:
 oc -n eco-forecast rsync forecast_example/ pecan-unconstrained-forecast-0:/opt/app-root/src/forecast_example/
 ```
 
+mc -C /tmp/.mc alias set openshift https://$MINIO_HOST $MINIO_KEY $MINIO_SECRET
+mc -C /tmp/.mc ls openshift

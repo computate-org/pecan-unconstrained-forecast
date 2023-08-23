@@ -65,4 +65,6 @@ RUN chmod +x /usr/local/bin/mc
 COPY . /usr/local/src/pecan-unconstrained-forecast
 WORKDIR /usr/local/src/pecan-unconstrained-forecast
 
+RUN chmod -R a+rw /pecan
+
 CMD /usr/bin/bash
