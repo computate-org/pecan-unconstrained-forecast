@@ -7,8 +7,8 @@ In one terminal, start a debug job pod:
 ```bash
 oc project software-application-innovation-lab-sail-projects-fcd6dfa
 oc debug job/pecan-unconstrained-forecast
-git clone https://github.com/mdietze/pecan.git -b hf_landscape /opt/app-root/src/pecan
-export PECAN_HOME=/opt/app-root/src/pecan
+git clone https://github.com/mdietze/pecan.git -b hf_landscape /opt/forecast_example/pecan
+export PECAN_HOME=/opt/forecast_example/pecan
 ```
 
 In the debug job pod, run the forecast, line-by-line by copying them into the `R` command: 
@@ -72,5 +72,10 @@ Then rsync the forecast_example to the pod:
 oc -n eco-forecast rsync forecast_example/ pecan-unconstrained-forecast-0:/opt/app-root/src/forecast_example/
 ```
 
+# Test S3 Bucket with minio
+
+```bash
+MINIO_HOST=s3-openshift-storage.apps.shift.nerc.mghpcc.org
 mc -C /tmp/.mc alias set openshift https://$MINIO_HOST $MINIO_KEY $MINIO_SECRET
 mc -C /tmp/.mc ls openshift
+```

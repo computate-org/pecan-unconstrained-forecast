@@ -17,6 +17,14 @@ spec:
         - name: pecan-unconstrained-forecast
           resources: {}
           env:
+            - name: NC_DIR
+              value: /opt/forecast_example/GEFS-NC
+            - name: CLIM_DIR
+              value: /opt/forecast_example/GEFS
+            - name: MINIO_SCHEME
+              value: https
+            - name: MINIO_PUBLIC
+              value: FALSE
             - name: MINIO_HOST
               valueFrom:
                 configMapKeyRef:

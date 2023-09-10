@@ -10,14 +10,15 @@ USER root
 # ----------------------------------------------------------------------
 # PEcAn version information
 # ----------------------------------------------------------------------
-ENV PECAN_VERSION="develop"
+ENV PECAN_VERSION="hf_landscape"
 
 # ----------------------------------------------------------------------
 # PEcAn installation from local source
 # ----------------------------------------------------------------------
 # clone PEcAn
 RUN install -d -o root -g root -m 775 /pecan
-RUN git clone -b $PECAN_VERSION https://github.com/PecanProject/pecan.git /pecan
+#RUN git clone -b $PECAN_VERSION https://github.com/PecanProject/pecan.git /pecan
+RUN git clone https://github.com/computate-org/pecan.git -b hf_landscape /pecan
 
 # Install prerequisite packages
 RUN yum install -y vim python3-pip python3-virtualenv flex libtool harfbuzz-devel \
@@ -36,7 +37,7 @@ RUN tar xvf /tmp/JAGS-4.3.2.tar.gz -C /usr/src/jags --strip-components=1 && \
     make install
 
 RUN R -e 'install.packages(c("rjags", "Rcpp", "miniUI", "ragg", "pkgdown", "devtools", \
-        "partitions", "ncdf4", "units", "terra", "raster", "rgdal", "datapack" \
+        "partitions", "ncdf4", "units", "terra", "raster", "rgdal", "datapack", "dynutils" \
         ))'
 
 # install all PEcAn packages
