@@ -32,9 +32,17 @@ oc rsync /home/ctate/.local/src/pecan-work/forecast_example/ pecan-unconstrained
 
 ## Build the container with podman
 
+- Create a new Fine-grained access token for Public Repositories (read-only) in GitHub -> User -> Settings -> Developer Settings -> Personal access tokens -> Fine-grained tokens. 
+- Write a GitHub personal access token to the github_token file. 
+  This is set up to be ignored in git. 
+
+```bash
+vim ~/.local/src/pecan-unconstrained-forecast/github_token
+```
+
 ```bash
 cd ~/.local/src/pecan-unconstrained-forecast
-podman build -t computateorg/pecan-unconstrained-forecast:latest .
+podman build --secret id=github_token,src=github_token -t computateorg/pecan-unconstrained-forecast:latest .
 ```
 
 ## Test the container locally
@@ -77,5 +85,5 @@ oc -n eco-forecast rsync forecast_example/ pecan-unconstrained-forecast-0:/opt/a
 ```bash
 MINIO_HOST=s3-openshift-storage.apps.shift.nerc.mghpcc.org
 mc -C /tmp/.mc alias set openshift https://$MINIO_HOST $MINIO_KEY $MINIO_SECRET
-mc -C /tmp/.mc ls openshift
+mc -C /tmp/.mc ls openshift/$MINIO_BUCKET
 ```

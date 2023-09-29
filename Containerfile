@@ -3,7 +3,7 @@ FROM quay.io/opendatahub-contrib/workbench-images:jupyter-datascience-rstudio-c9
 MAINTAINER Christopher Tate <computate@computate.org>
 
 ENV PECAN_HOME=/pecan \
-    PROJECT_DIR=/opt/forecast_example
+    PROJECT_DIR=/opt/app-root/src/forecast_example
 
 USER root
 
@@ -64,7 +64,7 @@ RUN curl https://dl.min.io/client/mc/release/linux-amd64/mc --create-dirs -o /us
 RUN chmod +x /usr/local/bin/mc
 
 COPY . /usr/local/src/pecan-unconstrained-forecast
-WORKDIR /usr/local/src/pecan-unconstrained-forecast
+WORKDIR /opt/app-root/src
 
 RUN chmod -R a+rw /pecan
 
