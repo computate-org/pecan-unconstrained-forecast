@@ -1,5 +1,9 @@
 # pecan-unconstrained-forecast
 
+## The PEcAn Unconstrained Forecast RHODS Workbench in NERC
+
+- Follow the [documentation to run the Unconstrained Forecast in RHODS](docs/set-up-unconstrained-forecast-rhods-workbench.md). 
+
 ## Run the forecast
 
 In one terminal, start a debug job pod: 
