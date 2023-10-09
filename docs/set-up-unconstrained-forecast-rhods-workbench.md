@@ -48,6 +48,24 @@ so we need to create a route to our RHODS workbench manually.
 
 Now you should be able to open your RHODS workbench
 
+# Setting up a GitHub personal access token for pecan development in RHODS
+
+- Create a [new GitHub personal acces token here](https://github.com/settings/personal-access-tokens/new) to your repo. 
+- Select "Only select repositories", and select your pecan repo. 
+- Under "Content", select "Access: Read and Write". 
+- Copy the token to the clipboard, then set up the following environment variables in a Terminal in RHODS: 
+
+```bash
+GITHUB_USERNAME=...
+GITHUB_TOKEN=...
+git config --global user.email '...'
+git config --global user.name '...'
+echo "https://${GITHUB_USERNAME}:${GITHUB_TOKEN}@github.com" > ~/.git-credentials
+git config --global credential.helper store
+```
+
+Now you should be able to commit and push your pecan changes to GitHub. 
+
 # Running an ecological forecast in RHODS
 
 - Open a Terminal in your workbench: File -> New -> Terminal
