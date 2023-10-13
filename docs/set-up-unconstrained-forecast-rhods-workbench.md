@@ -72,7 +72,7 @@ Now you should be able to commit and push your pecan changes to GitHub.
 - Clone a current PEcAn Git Repo
 
 ```bash
-git clone https://github.com/computate-org/pecan.git -b hf_landscape ~/pecan
+git clone https://github.com/computate/pecan.git -b hf_landscape ~/pecan
 ```
 
 - Make a directory for `forecast_example` and rsync the forecast_example: 
