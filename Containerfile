@@ -24,7 +24,7 @@ RUN git clone https://github.com/computate-org/pecan.git -b hf_landscape /pecan
 RUN yum install -y vim python3-pip python3-virtualenv flex libtool harfbuzz-devel \
     fribidi-devel gsl-devel netcdf-devel udunits2-devel geos-devel redland-devel \
     blas-devel lapack-devel gdal-devel proj-devel cairo-devel libXt-devel \
-    gmp-devel mpfr-devel
+    gmp-devel mpfr-devel tree
 RUN echo 'options(repos=c(CRAN="https://ftp.osuosl.org/pub/cran/"))' > ~/.Rprofile
 
 # Install JAGS prerequisite library
@@ -38,6 +38,7 @@ RUN tar xvf /tmp/JAGS-4.3.2.tar.gz -C /usr/src/jags --strip-components=1 && \
 
 RUN R -e 'install.packages(c("rjags", "Rcpp", "miniUI", "ragg", "pkgdown", "devtools", \
         "partitions", "ncdf4", "units", "terra", "raster", "rgdal", "datapack", "dynutils" \
+        "grep1" \
         ))'
 
 # install all PEcAn packages
