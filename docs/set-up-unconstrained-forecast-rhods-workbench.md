@@ -48,6 +48,20 @@ so we need to create a route to our RHODS workbench manually.
 
 Now you should be able to open your RHODS workbench
 
+# Set up a rolebinding for your RHODS service account: 
+
+replace `ctate-rhods-pecan` with the name of your RHODS workbench twice below: 
+
+```bash
+oc create rolebinding ctate-rhods-pecan-edit --clusterrole=edit --serviceaccount=software-application-innovation-lab-sail-projects-fcd6dfa:ctate-rhods-pecan
+```
+
+# RSync files to the executor shared files
+
+```bash
+oc rsync ctate-test/ $(oc get pod -l app.kubernetes.io/name=pecan-executor -o name):/data/ctate-test/
+```
+
 # Setting up a GitHub personal access token for pecan development in RHODS
 
 - Create a [new GitHub personal acces token here](https://github.com/settings/personal-access-tokens/new) to your repo. 
