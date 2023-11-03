@@ -10,7 +10,7 @@
    id="svg170"
    sodipodi:docname="pecan-unconstrained-forecast-architecture.svg"
    inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
-   inkscape:export-filename="open-iot-data-science-architecture.png"
+   inkscape:export-filename="pecan-unconstrained-forecast-architecture.png"
    inkscape:export-xdpi="200"
    inkscape:export-ydpi="200"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -29,8 +29,8 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:zoom="0.97925244"
-     inkscape:cx="651.0068"
-     inkscape:cy="548.3775"
+     inkscape:cx="428.38801"
+     inkscape:cy="294.61249"
      inkscape:window-width="1920"
      inkscape:window-height="983"
      inkscape:window-x="0"
@@ -1047,163 +1047,171 @@
          id="tspan214-0-60">1+ replica, 1 cpu, 1Gi RAM</tspan></text>
   </g>
   <g
-     id="g29-88"
-     transform="translate(208.18731,384.03697)">
-    <g
-       id="g242-6-2-7-9-2-6-2-9"
-       transform="translate(759.47691,-320.39377)">
-      <rect
-         x="60.5"
-         y="515.79297"
-         width="196"
-         height="117"
-         fill="#cdcece"
-         stroke="none"
-         pointer-events="all"
-         id="rect12-8-2-2-2-2-5-5-77" />
-      <rect
-         x="56.5"
-         y="511.79297"
-         width="180"
-         height="117"
-         fill="#ffffff"
-         stroke="none"
-         pointer-events="all"
-         id="rect16-5-1-4-7-1-0-8-6" />
-      <rect
-         x="59.5"
-         y="514.79297"
-         width="174"
-         height="111"
-         fill="none"
-         stroke="#dcdcdc"
-         pointer-events="all"
-         id="rect17-2-5-1-3-6-0-9-4" />
-      <circle
-         cx="246.5"
-         cy="542.79297"
-         fill="#aaaaaa"
-         stroke="#aaaaaa"
-         pointer-events="all"
-         id="ellipse20-1-0-6-6-3-3-5-30"
-         r="4" />
-      <circle
-         cx="246.5"
-         cy="576.79297"
-         fill="#aaaaaa"
-         stroke="#aaaaaa"
-         pointer-events="all"
-         id="ellipse20-9-9-9-5-4-0-4-0-3"
-         r="4" />
-      <circle
-         cx="246.5"
-         cy="608.79297"
-         fill="#aaaaaa"
-         stroke="#aaaaaa"
-         pointer-events="all"
-         id="ellipse20-9-4-9-0-7-7-2-6-6-0"
-         r="4" />
-    </g>
+     id="g242-6-2-7-9-2-6-2-9"
+     transform="translate(967.66422,63.6432)">
     <rect
-       x="826.5"
-       y="201.79297"
-       width="160"
-       height="40"
-       fill="#689b7a"
-       stroke="#689b7a"
-       pointer-events="all"
-       id="rect147-9" />
-    <text
-       xml:space="preserve"
-       style="font-weight:bold;font-size:13.3333px;line-height:normal;font-family:'Red Hat Text';-inkscape-font-specification:'Red Hat Text';text-align:start;text-decoration-color:#000000;text-anchor:start;fill:#004153;fill-opacity:1;-inkscape-stroke:none"
-       x="830.27606"
-       y="217.22003"
-       id="text15-7-1-8-6-2"><tspan
-         sodipodi:role="line"
-         x="830.27606"
-         y="217.22003"
-         style="font-size:13.3333px;fill:#ffffff"
-         id="tspan17-5-1-54">Model </tspan><tspan
-         sodipodi:role="line"
-         x="830.27606"
-         y="233.88666"
-         style="font-size:13.3333px;fill:#ffffff"
-         id="tspan22-0">Biocro</tspan></text>
-    <rect
-       x="826.5"
-       y="249.79297"
-       width="130"
-       height="48"
-       fill="none"
+       x="60.5"
+       y="515.79297"
+       width="196"
+       height="117"
+       fill="#cdcece"
        stroke="none"
        pointer-events="all"
-       id="rect148-59" />
+       id="rect12-8-2-2-2-2-5-5-77" />
     <rect
-       x="956.5"
-       y="267.79297"
-       width="30"
-       height="30"
-       fill="none"
+       x="56.5"
+       y="511.79297"
+       width="180"
+       height="117"
+       fill="#ffffff"
        stroke="none"
        pointer-events="all"
-       id="rect149-46" />
-    <g
-       id="g108-8-6-2-9"
-       transform="translate(116.32352,-88.183631)">
-      <path
-         style="font-variation-settings:normal;opacity:1;fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:1.00535;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-         d="m 849.69544,294.05845 -13.51629,7.56883 v 15.61459 l 13.28752,7.81848 13.4364,-8.0157 v -14.96798 z"
-         id="path107-4-8-6-2" />
-      <path
-         style="font-variation-settings:normal;opacity:1;fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:1.00535;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-         d="m 843.89204,304.109 h 11.25125 v 10.85961 h -11.34228 z"
-         id="path108-3-9-1-2" />
-      <circle
-         style="font-variation-settings:normal;fill:#f8fafd;fill-opacity:1;stroke:none;stroke-width:1.00535;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-         id="path105-3-1-2-8-4"
-         cx="849.69342"
-         cy="307.30811"
-         r="0.52268732" />
-      <circle
-         style="font-variation-settings:normal;fill:#f8fafd;fill-opacity:1;stroke:none;stroke-width:1.00535;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-         id="path105-9-0-4-6-7-7"
-         cx="851.78613"
-         cy="307.33566"
-         r="0.52268732" />
-    </g>
-    <text
-       xml:space="preserve"
-       style="font-size:10.6667px;font-family:Sans;-inkscape-font-specification:Sans;text-align:center;text-anchor:middle;fill:#000000;stroke:#ffffff;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
-       x="824.75519"
-       y="253.39716"
-       id="text191-1-7-7-0-75"><tspan
-         sodipodi:role="line"
-         x="824.75519"
-         y="253.39716"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:'Red Hat Text';-inkscape-font-specification:'Red Hat Text';text-align:start;text-anchor:start;fill:#333333;stroke:none"
-         id="tspan214-48">Scalable PEcAn ecological </tspan><tspan
-         sodipodi:role="line"
-         x="824.75519"
-         y="266.73053"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:'Red Hat Text';-inkscape-font-specification:'Red Hat Text';text-align:start;text-anchor:start;fill:#333333;stroke:none"
-         id="tspan27-1">forecasting data science </tspan><tspan
-         sodipodi:role="line"
-         x="824.75519"
-         y="280.0639"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:'Red Hat Text';-inkscape-font-specification:'Red Hat Text';text-align:start;text-anchor:start;fill:#333333;stroke:none"
-         id="tspan29-2">model run</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:10.6667px;font-family:Sans;-inkscape-font-specification:Sans;text-align:center;text-anchor:middle;fill:#000000;stroke:#ffffff;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
-       x="994.00873"
-       y="304.2175"
-       id="text191-1-7-7-0-7-89"><tspan
-         sodipodi:role="line"
-         x="994.00873"
-         y="304.2175"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.6667px;font-family:'Red Hat Text';-inkscape-font-specification:'Red Hat Text';text-align:end;text-anchor:end;fill:#333333;stroke:none"
-         id="tspan214-0-3">1+ replica, 1 cpu, 1Gi RAM</tspan></text>
+       id="rect16-5-1-4-7-1-0-8-6" />
+    <rect
+       x="59.5"
+       y="514.79297"
+       width="174"
+       height="111"
+       fill="none"
+       stroke="#dcdcdc"
+       pointer-events="all"
+       id="rect17-2-5-1-3-6-0-9-4" />
+    <circle
+       cx="246.5"
+       cy="542.79297"
+       fill="#aaaaaa"
+       stroke="#aaaaaa"
+       pointer-events="all"
+       id="ellipse20-1-0-6-6-3-3-5-30"
+       r="4" />
+    <circle
+       cx="246.5"
+       cy="576.79297"
+       fill="#aaaaaa"
+       stroke="#aaaaaa"
+       pointer-events="all"
+       id="ellipse20-9-9-9-5-4-0-4-0-3"
+       r="4" />
+    <circle
+       cx="246.5"
+       cy="608.79297"
+       fill="#aaaaaa"
+       stroke="#aaaaaa"
+       pointer-events="all"
+       id="ellipse20-9-4-9-0-7-7-2-6-6-0"
+       r="4" />
   </g>
+  <rect
+     x="1034.6873"
+     y="585.82996"
+     width="160"
+     height="40"
+     fill="#689b7a"
+     stroke="#689b7a"
+     pointer-events="all"
+     id="rect147-9" />
+  <text
+     xml:space="preserve"
+     style="font-weight:bold;font-size:13.3333px;line-height:normal;font-family:'Red Hat Text';-inkscape-font-specification:'Red Hat Text';text-align:start;text-decoration-color:#000000;text-anchor:start;fill:#004153;fill-opacity:1;-inkscape-stroke:none"
+     x="1038.4634"
+     y="601.25702"
+     id="text15-7-1-8-6-2"><tspan
+       sodipodi:role="line"
+       x="1038.4634"
+       y="601.25702"
+       style="font-size:13.3333px;fill:#ffffff"
+       id="tspan17-5-1-54">Model </tspan><tspan
+       sodipodi:role="line"
+       x="1038.4634"
+       y="617.92365"
+       style="font-size:13.3333px;fill:#ffffff"
+       id="tspan22-0">Biocro</tspan></text>
+  <g
+     id="g1-3"
+     transform="matrix(0.69644411,0,0,0.69644411,118.14699,89.041114)">
+    <image
+       width="258.11935"
+       height="70.968513"
+       preserveAspectRatio="none"
+       xlink:href="data:image/png;base64,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&#10;"
+       id="image1"
+       x="35.592808"
+       y="-1.9599652" />
+  </g>
+  <rect
+     x="1034.6873"
+     y="633.82996"
+     width="130"
+     height="48"
+     fill="none"
+     stroke="none"
+     pointer-events="all"
+     id="rect148-59" />
+  <rect
+     x="1164.6873"
+     y="651.82996"
+     width="30"
+     height="30"
+     fill="none"
+     stroke="none"
+     pointer-events="all"
+     id="rect149-46" />
+  <g
+     id="g108-8-6-2-9"
+     transform="translate(324.51083,295.85334)">
+    <path
+       style="font-variation-settings:normal;opacity:1;fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:1.00535;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 849.69544,294.05845 -13.51629,7.56883 v 15.61459 l 13.28752,7.81848 13.4364,-8.0157 v -14.96798 z"
+       id="path107-4-8-6-2" />
+    <path
+       style="font-variation-settings:normal;opacity:1;fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:1.00535;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 843.89204,304.109 h 11.25125 v 10.85961 h -11.34228 z"
+       id="path108-3-9-1-2" />
+    <circle
+       style="font-variation-settings:normal;fill:#f8fafd;fill-opacity:1;stroke:none;stroke-width:1.00535;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path105-3-1-2-8-4"
+       cx="849.69342"
+       cy="307.30811"
+       r="0.52268732" />
+    <circle
+       style="font-variation-settings:normal;fill:#f8fafd;fill-opacity:1;stroke:none;stroke-width:1.00535;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path105-9-0-4-6-7-7"
+       cx="851.78613"
+       cy="307.33566"
+       r="0.52268732" />
+  </g>
+  <text
+     xml:space="preserve"
+     style="font-size:10.6667px;font-family:Sans;-inkscape-font-specification:Sans;text-align:center;text-anchor:middle;fill:#000000;stroke:#ffffff;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+     x="1032.9425"
+     y="637.43414"
+     id="text191-1-7-7-0-75"><tspan
+       sodipodi:role="line"
+       x="1032.9425"
+       y="637.43414"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:'Red Hat Text';-inkscape-font-specification:'Red Hat Text';text-align:start;text-anchor:start;fill:#333333;stroke:none"
+       id="tspan214-48">Scalable PEcAn ecological </tspan><tspan
+       sodipodi:role="line"
+       x="1032.9425"
+       y="650.76752"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:'Red Hat Text';-inkscape-font-specification:'Red Hat Text';text-align:start;text-anchor:start;fill:#333333;stroke:none"
+       id="tspan27-1">forecasting data science </tspan><tspan
+       sodipodi:role="line"
+       x="1032.9425"
+       y="664.10089"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:'Red Hat Text';-inkscape-font-specification:'Red Hat Text';text-align:start;text-anchor:start;fill:#333333;stroke:none"
+       id="tspan29-2">model run</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:10.6667px;font-family:Sans;-inkscape-font-specification:Sans;text-align:center;text-anchor:middle;fill:#000000;stroke:#ffffff;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+     x="1202.196"
+     y="688.25446"
+     id="text191-1-7-7-0-7-89"><tspan
+       sodipodi:role="line"
+       x="1202.196"
+       y="688.25446"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.6667px;font-family:'Red Hat Text';-inkscape-font-specification:'Red Hat Text';text-align:end;text-anchor:end;fill:#333333;stroke:none"
+       id="tspan214-0-3">1+ replica, 1 cpu, 1Gi RAM</tspan></text>
   <g
      id="g29-0"
      transform="translate(208.18731,512.74207)">
