@@ -48,6 +48,12 @@ so we need to create a route to our RHODS workbench manually.
 
 Now you should be able to open your RHODS workbench
 
+# Set up a rolebinding for the default service account to access other pods in namespace: 
+
+```bash
+oc create rolebinding default-edit --clusterrole=edit --serviceaccount=software-application-innovation-lab-sail-projects-fcd6dfa:default
+```
+
 # Set up a rolebinding for your RHODS service account: 
 
 replace `ctate-rhods-pecan` with the name of your RHODS workbench twice below: 
@@ -108,4 +114,10 @@ oc rsync ~/Downloads/forecast_example/ ctate-rhods-pecan-0:/opt/app-root/src/for
 
 ```bash
 Rscript pecan/scripts/HARV_metdownload_efi.R
+```
+
+- Try out the 05_SDA_Workflow_NA.R script in the Terminal: 
+
+```bash
+Rscript pecan/modules/assim.sequential/inst/hf_landscape/05_SDA_Workflow_NA.R --start.date 2022-05-19 --prev "/opt/app-root/src/forecast_example/FNA2022-05-18/"
 ```
