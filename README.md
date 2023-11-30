@@ -1,5 +1,9 @@
 # pecan-unconstrained-forecast
 
+## The PEcAn Unconstrained Forecast RHODS Workbench in NERC
+
+- Follow the [documentation to run the Unconstrained Forecast in RHODS](docs/set-up-unconstrained-forecast-rhods-workbench.md). 
+
 ## Run the forecast
 
 In one terminal, start a debug job pod: 
@@ -7,8 +11,8 @@ In one terminal, start a debug job pod:
 ```bash
 oc project software-application-innovation-lab-sail-projects-fcd6dfa
 oc debug job/pecan-unconstrained-forecast
-git clone https://github.com/mdietze/pecan.git -b hf_landscape /opt/app-root/src/pecan
-export PECAN_HOME=/opt/app-root/src/pecan
+git clone https://github.com/mdietze/pecan.git -b hf_landscape /opt/forecast_example/pecan
+export PECAN_HOME=/opt/forecast_example/pecan
 ```
 
 In the debug job pod, run the forecast, line-by-line by copying them into the `R` command: 
@@ -32,9 +36,17 @@ oc rsync /home/ctate/.local/src/pecan-work/forecast_example/ pecan-unconstrained
 
 ## Build the container with podman
 
+- Create a new Fine-grained access token for Public Repositories (read-only) in GitHub -> User -> Settings -> Developer Settings -> Personal access tokens -> Fine-grained tokens. 
+- Write a GitHub personal access token to the github_token file. 
+  This is set up to be ignored in git. 
+
+```bash
+vim ~/.local/src/pecan-unconstrained-forecast/github_token
+```
+
 ```bash
 cd ~/.local/src/pecan-unconstrained-forecast
-podman build -t computateorg/pecan-unconstrained-forecast:latest .
+podman build --secret id=github_token,src=github_token -t computateorg/pecan-unconstrained-forecast:latest .
 ```
 
 ## Test the container locally
@@ -72,5 +84,10 @@ Then rsync the forecast_example to the pod:
 oc -n eco-forecast rsync forecast_example/ pecan-unconstrained-forecast-0:/opt/app-root/src/forecast_example/
 ```
 
+# Test S3 Bucket with minio
+
+```bash
+MINIO_HOST=s3-openshift-storage.apps.shift.nerc.mghpcc.org
 mc -C /tmp/.mc alias set openshift https://$MINIO_HOST $MINIO_KEY $MINIO_SECRET
-mc -C /tmp/.mc ls openshift
+mc -C /tmp/.mc ls openshift/$MINIO_BUCKET
+```
