@@ -34,7 +34,7 @@ This step has already been done, but if you need to run it again: In another ter
 oc rsync /home/ctate/.local/src/pecan-work/forecast_example/ pecan-unconstrained-forecast-debug:/opt/forecast_example/
 ```
 
-## Build the container with podman
+# Build the container with podman
 
 - Create a new Fine-grained access token for Public Repositories (read-only) in GitHub -> User -> Settings -> Developer Settings -> Personal access tokens -> Fine-grained tokens. 
 - Write a GitHub personal access token to the github_token file. 
@@ -44,9 +44,28 @@ oc rsync /home/ctate/.local/src/pecan-work/forecast_example/ pecan-unconstrained
 vim ~/.local/src/pecan-unconstrained-forecast/github_token
 ```
 
+## Build prerequisite containers with podman
+
+```bash
+podman build --pull --secret id=github_token,src=$HOME/.local/src/pecan-unconstrained-forecast/github_token --build-arg R_VERSION=4.1 --tag computateorg/pecan/depends:latest docker/depends --no-cache
+podman push computateorg/pecan/depends:latest quay.io/computateorg/pecan/depends:latest
+
+podman build --secret id=github_token,src=$HOME/.local/src/pecan-unconstrained-forecast/github_token --tag computateorg/pecan/base:latest --build-arg FROM_ORG=computateorg --build-arg FROM_IMAGE=pecan/depends --build-arg IMAGE_VERSION=latest --build-arg PECAN_VERSION=4.1 --build-arg PECAN_VERSION=hf_landscape_1_DongchenZ_develop --build-arg PECAN_GIT_BRANCH=hf_landscape_1_DongchenZ_develop --file docker/base/Dockerfile . --no-cache
+podman push computateorg/pecan/base:latest quay.io/computateorg/pecan/base:latest
+
+podman build --secret id=github_token,src=$HOME/.local/src/pecan-unconstrained-forecast/github_token --tag computateorg/pecan/models:latest --build-arg FROM_ORG=computateorg --build-arg FROM_IMAGE=pecan/base --build-arg IMAGE_VERSION=latest docker/models --no-cache
+podman push computateorg/pecan/models:latest quay.io/computateorg/pecan/models:latest
+
+podman build --secret id=github_token,src=$HOME/.local/src/pecan-unconstrained-forecast/github_token --tag computateorg/pecan/model-sipnet-r136:latest --build-arg FROM_ORG=computateorg --build-arg FROM_IMAGE=pecan/models --build-arg IMAGE_VERSION=latest --build-arg MODEL_VERSION=r136 --build-arg GITHUB_ORG=computate-org --build-arg GITHUB_REPO=sipnet models/sipnet --no-cache
+podman push computateorg/pecan/model-sipnet-r136:latest quay.io/computateorg/pecan/model-sipnet-r136:latest
+
+```
+
+## Build the unconstrained forecast container
+
 ```bash
 cd ~/.local/src/pecan-unconstrained-forecast
-podman build --secret id=github_token,src=github_token -t computateorg/pecan-unconstrained-forecast:latest .
+podman build --secret id=github_token,src=github_token -t computateorg/pecan-unconstrained-forecast:latest . --no-cache
 ```
 
 ## Test the container locally
@@ -90,4 +109,8 @@ oc -n eco-forecast rsync forecast_example/ pecan-unconstrained-forecast-0:/opt/a
 MINIO_HOST=s3-openshift-storage.apps.shift.nerc.mghpcc.org
 mc -C /tmp/.mc alias set openshift https://$MINIO_HOST $MINIO_KEY $MINIO_SECRET
 mc -C /tmp/.mc ls openshift/$MINIO_BUCKET
+```
+
+```bash
+Rscript pecan/scripts/HARV_metdownload_efi.R --start.date 2022-05-19 --jumpback.date $(date '+%Y-%m-%d')
 ```
